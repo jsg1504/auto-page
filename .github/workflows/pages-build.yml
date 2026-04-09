@@ -20,12 +20,27 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      PAGES_ADMIN_TOKEN: ${{ secrets.PAGES_ADMIN_TOKEN }}
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - name: Explain Pages bootstrap mode
+        if: ${{ env.PAGES_ADMIN_TOKEN == '' }}
+        run: |
+          echo "PAGES_ADMIN_TOKEN is not set."
+          echo "This workflow expects GitHub Pages to already be enabled with Source=GitHub Actions."
+          echo "If this repository has never had Pages enabled, either:"
+          echo "1. set Settings > Pages > Source to GitHub Actions once, or"
+          echo "2. add a PAGES_ADMIN_TOKEN secret so configure-pages can enable Pages automatically."
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+        with:
+          token: ${{ secrets.PAGES_ADMIN_TOKEN != '' && secrets.PAGES_ADMIN_TOKEN || github.token }}
+          enablement: ${{ secrets.PAGES_ADMIN_TOKEN != '' }}
       - uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
         with:
           source: ./docs

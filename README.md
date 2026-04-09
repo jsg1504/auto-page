@@ -17,7 +17,10 @@ GitHub issue를 문서화 요청으로 받아 OpenAI Responses API(`gpt-5.4`)로
 - `OPENAI_API_KEY` secret: OpenAI API key
 - `REVIEWER_POOL` secret: 문서 생성 권한이 있는 GitHub 로그인 목록(쉼표 또는 줄바꿈 구분)
 - 선택: `REQUESTER_POOL` secret + `ENFORCE_REQUESTER_POOL=true` variable
-- GitHub Pages: Actions 기반 배포 권한 활성화
+- GitHub Pages: `Settings > Pages > Build and deployment > Source = GitHub Actions`
+- 선택: `PAGES_ADMIN_TOKEN` secret
+  - 저장소에 Pages가 아직 한 번도 활성화되지 않았다면 필요합니다.
+  - `actions/configure-pages`의 `enablement`는 기본 `GITHUB_TOKEN`으로는 동작하지 않아서, repo admin 권한이 있는 PAT 또는 적절한 GitHub App 토큰을 넣어야 합니다.
 
 ## 로컬 검증
 
