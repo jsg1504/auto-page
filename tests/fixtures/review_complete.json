@@ -1,0 +1,11 @@
+{
+  "issue": {
+    "number": 102,
+    "title": "RAG 리서치",
+    "body": "### 분류\n리서치 정리\n\n### 참고 링크\nhttps://arxiv.org/abs/2005.11401\n\n### 요청사항\nRAG 관련 최근 아이디어를 정리해줘.\n",
+    "user": {"login": "alice"},
+    "labels": [{"name": "state:review-complete"}],
+    "html_url": "https://github.com/example/repo/issues/102"
+  },
+  "sender": {"login": "admin"}
+}

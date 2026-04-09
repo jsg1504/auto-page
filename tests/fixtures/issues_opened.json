@@ -1,0 +1,11 @@
+{
+  "issue": {
+    "number": 101,
+    "title": "OAuth 개념 정리",
+    "body": "### 분류\n개념정리\n\n### 참고 링크\nhttps://oauth.net/2/\n\n### 요청사항\nOAuth 2.0 개념을 정리해줘.\n",
+    "user": {"login": "alice"},
+    "labels": [],
+    "html_url": "https://github.com/example/repo/issues/101"
+  },
+  "sender": {"login": "alice"}
+}

@@ -1,0 +1,41 @@
+name: Documentation request
+about: Ask the automation pipeline to generate a categorized document.
+title: "[doc] "
+labels: ["doc-request"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: 분류
+      description: 문서가 들어갈 1차 카테고리를 선택하세요.
+      options:
+        - 개념정리
+        - 리서치 정리
+        - 정보 요약
+    validations:
+      required: true
+  - type: textarea
+    id: reference_links
+    attributes:
+      label: 참고 링크
+      description: 문서나 논문 링크를 줄바꿈으로 추가하세요.
+      placeholder: |
+        https://example.com/doc
+        https://arxiv.org/abs/1234.5678
+    validations:
+      required: false
+  - type: textarea
+    id: request_details
+    attributes:
+      label: 요청사항
+      description: 문서가 반드시 다뤄야 하는 내용을 구체적으로 적어주세요.
+      placeholder: 어떤 맥락에서 다시 찾고 싶은지, 어떤 형식이면 좋은지 적어주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: additional_instructions
+    attributes:
+      label: 추가 요청사항
+      description: 태그, 비교 포인트, 표 등 추가 요구사항이 있으면 적어주세요.
+    validations:
+      required: false

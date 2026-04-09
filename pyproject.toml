@@ -1,0 +1,5 @@
+[project]
+name = "auto-page"
+version = "0.1.0"
+description = "GitHub issue triggered documentation automation for GitHub Pages"
+requires-python = ">=3.11"

@@ -1,0 +1,11 @@
+{
+  "issue": {
+    "number": 103,
+    "title": "Retry me",
+    "body": "### 분류\n정보 요약\n\n### 요청사항\n다시 생성\n",
+    "user": {"login": "alice"},
+    "labels": [{"name": "state:retry-requested"}],
+    "html_url": "https://github.com/example/repo/issues/103"
+  },
+  "sender": {"login": "alice"}
+}
