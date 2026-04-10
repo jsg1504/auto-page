@@ -1,5 +1,5 @@
 name: Documentation request
-about: Ask the automation pipeline to generate a categorized document.
+description: Ask the automation pipeline to generate a categorized document.
 title: "[doc] "
 labels: ["doc-request"]
 body:
